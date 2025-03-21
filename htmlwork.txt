@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optical Illusion Test</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            margin: 0;
+            padding: 20px;
+        }
+        #illusion {
+            width: 300px;
+            height: 300px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/HermannGrid.svg/1200px-HermannGrid.svg.png') no-repeat center;
+            background-size: cover;
+            margin: 50px auto;
+        }
+        #jumpscare {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #jumpscare img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Focus on the center of the image for 10 seconds...</h1>
+    <div id="illusion"></div>
+    <p>Can you see the hidden shape?</p>
+    <div id="jumpscare">
+        <img src="https://i.imgur.com/RPpGdzE.jpg" alt="Scary Face">
+        <audio id="scream" src="https://www.fesliyanstudios.com/play-mp3/4380" preload="auto"></audio>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.body.style.background = "black";
+            document.getElementById("jumpscare").style.display = "flex";
+            document.getElementById("scream").play();
+        }, 5000);
+    </script>
+</body>
+</html>
